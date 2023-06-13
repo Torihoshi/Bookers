@@ -2,14 +2,14 @@
 
 <!-- 一覧部分 -->
 <p class="index-title">Title</p>
-<% @books.each do |list| %>
-  <span><%= list.title %></span>
-<% end %>
-
 <p class="index-body">Body</p>
 <% @books.each do |list| %>
+  <span><%= list.title %></span>
   <span><%= list.body %></span>
+  <span><%= link_to 'show', book_path(list.id) %></span>
+
 <% end %>
+
 
 
 <!-- 投稿部分 -->
