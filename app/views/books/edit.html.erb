@@ -38,6 +38,6 @@
 </div>
 
 <!-- リンク -->
-<a><%= link_to 'Show', book_path(@book.id) %></a>
+<%= link_to 'Show', book_path(@book), class: "show_link" %>
 |
-<a><%= link_to 'Back', '/books' %></a>
+<%= link_to 'Back', '/books', class: "back_link" %>
