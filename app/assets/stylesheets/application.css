@@ -24,10 +24,10 @@ body {
   margin: 33px;
 }
 
-
 h1 {
   margin: 17px auto;
   font-size: 26px;
+  line-height: 18px;
 }
 
 p {
@@ -35,7 +35,7 @@ p {
   font-size: 13px;
 }
 
-a {
+a, li {
   font-size: 13px;
 }
 a:link {
@@ -51,4 +51,34 @@ a:hover {
 
 .notice {
   color: #008000;
+}
+
+label {
+  font-size: 13px;
+}
+
+.form {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.error-box {
+
+  list-style-position: inside;
+  margin-bottom: 20px;
+  width: 450px;
+}
+
+h3 {
+  font-size: 13px;
+  color: white;
+  background-color: red;
+  padding: 8px 5px 5px 15px;
+}
+
+.error-message {
+  padding: 33px;
+  background-color: #dcdcdc;
+  border: 2px solid red;
+  box-sizing: border-box;
 }
