@@ -1,13 +1,16 @@
-<%# <p>Book was successfully created.</p> %>
+<!-- フラッシュメッセージ表示 -->
+<div>
+  <%= flash[:notice] %>
+</div>
 
+<!-- 投稿詳細表示 -->
 <p class="edit-title">
   <b>Title:</b><%= @book.title %>
 </p>
-
 <p class="edit-body">
   <b>Body:</b><%= @book.body %>
 </p>
 
+<!-- リンク -->
 <%= link_to 'Edit', edit_book_path(@book.id) %>
 <%= link_to 'Back', '/books' %>
-<%#  <%= link_to 'Destroy', destroy_book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
