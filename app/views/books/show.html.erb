@@ -1,16 +1,17 @@
 <!-- フラッシュメッセージ表示 -->
 <div>
-  <%= flash[:notice] %>
+  <p class="notice"><%= flash[:notice] %></p>
 </div>
 
 <!-- 投稿詳細表示 -->
 <p class="edit-title">
-  <b>Title:</b><%= @book.title %>
+  <b>Title: </b><%= @book.title %>
 </p>
 <p class="edit-body">
-  <b>Body:</b><%= @book.body %>
+  <b>Body: </b><%= @book.body %>
 </p>
 
 <!-- リンク -->
-<%= link_to 'Edit', edit_book_path(@book.id) %>
-<%= link_to 'Back', '/books' %>
+<a><%= link_to 'Edit', edit_book_path(@book.id) %></a>
+|
+<a><%= link_to 'Back', '/books' %></a>

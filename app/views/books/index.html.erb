@@ -1,7 +1,9 @@
 <!-- フラッシュメッセージ表示 -->
 <div>
-  <%= flash[:notice] %>
-</div><h1 class="main-title">Books</h1>
+  <p class="notice"><%= flash[:notice] %></p>
+</div>
+
+<h1 class="main-title">Books</h1>
 
 <!-- 投稿一覧表示 -->
 <p class="index-title">Title</p>
@@ -12,11 +14,17 @@
   <span><%= list.body %></span>
 
   <!-- Showへのリンク -->
-  <%= link_to 'Show', book_path(list.id) %>
+  <p>
+    <a><%= link_to 'Show', book_path(list.id) %></a>
+  </p>
   <!-- Editへのリンク -->
-  <%= link_to 'Edit', edit_book_path(list.id) %>
+  <p>
+    <a><%= link_to 'Edit', edit_book_path(list.id) %></a>
+  </p>
   <!-- Destroyへのリンク -->
-  <%= link_to 'Destroy', destroy_book_path(list.id), method: :delete, "data-confirm" => "Are you sure?" %>
+  <p>
+    <a><%= link_to 'Destroy', destroy_book_path(list.id), method: :delete, "data-confirm" => "Are you sure?" %></a>
+  </p>
 <% end %>
 
 

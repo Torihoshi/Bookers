@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
 * {
   margin: 0;
   padding: 0;
@@ -23,10 +24,31 @@ body {
   margin: 33px;
 }
 
+
+h1 {
+  margin: 17px auto;
+  font-size: 26px;
+}
+
+p {
+  margin: 33px;
+  font-size: 13px;
+}
+
+a {
+  font-size: 13px;
+}
+a:link {
+  color: black;
+}
 a:visited {
   color: #666;
 }
 a:hover {
   background-color: black;
   color: white;
+}
+
+.notice {
+  color: #008000;
 }
