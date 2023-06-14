@@ -1,48 +1,54 @@
 class BooksController < ApplicationController
 
+  #データの新規作成フォームを表示する
   def new
     @book = Book.new
   end
 
-  #投稿
+  #データを追加（保存）する
   def create
-    book = Book.new(book_params)
-    book.save
-    redirect_to book_path(book.id)
+    @book = Book.new(book_params)
+#    book.save
+#    redirect_to book_path(book.id)
+    if @book.save
+      redirect_to book_path(@book.id)
+    else
+      render :new
+    end
   end
 
-  #一覧
+  #データの一覧を表示する
   def index
     @books = Book.all
   end
 
-  #詳細
+  #データの内容（詳細）を表示する
   def show
     @book = Book.find(params[:id])
   end
 
-  #修正
+  #データを更新するためのフォームを表示する
   def edit
     @book = Book.find(params[:id])
   end
 
-  #更新
+  #データを更新する
   def update
-    @book = Book.find(params[:id])
-    @book.update(book_params)
-    redirect_to book_path(@book.id)
+    book = Book.find(params[:id])
+    book.update(book_params)
+    redirect_to book_path(book.id)
   end
 
-#削除
-def destroy
-  book = Book.find(params[:id])
-  book.destroy
-  redirect_to '/books'
-end
+  #データを削除する
+  def destroy
+    book = Book.find(params[:id])
+    book.destroy
+    redirect_to '/'
+  end
 
   private
   #　ストロングパラメータ
   def book_params
-    params.permit(:title, :body)
+    params.require(:book).permit(:title, :body)
   end
 end
