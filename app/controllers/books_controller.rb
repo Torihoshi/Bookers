@@ -8,17 +8,17 @@ class BooksController < ApplicationController
   #データを追加（保存）する
   def create
     @book = Book.new(book_params)
-#    book.save
-#    redirect_to book_path(book.id)
     if @book.save
       redirect_to book_path(@book.id)
     else
-      render :new
+      @books = Book.all
+      render :index
     end
   end
 
   #データの一覧を表示する
   def index
+    @book = Book.new
     @books = Book.all
   end
 
@@ -43,7 +43,7 @@ class BooksController < ApplicationController
   def destroy
     book = Book.find(params[:id])
     book.destroy
-    redirect_to '/'
+    redirect_to '/books'
   end
 
   private
