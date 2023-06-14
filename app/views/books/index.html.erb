@@ -6,27 +6,34 @@
 <h1 class="main-title">Books</h1>
 
 <!-- 投稿一覧表示 -->
-<p class="index-title">Title</p>
-<p class="index-body">Body</p>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
 
-<% @books.each do |list| %>
-  <span><%= list.title %></span>
-  <span><%= list.body %></span>
-
-  <!-- Showへのリンク -->
-  <p>
-    <a><%= link_to 'Show', book_path(list.id) %></a>
-  </p>
-  <!-- Editへのリンク -->
-  <p>
-    <a><%= link_to 'Edit', edit_book_path(list.id) %></a>
-  </p>
-  <!-- Destroyへのリンク -->
-  <p>
-    <a><%= link_to 'Destroy', destroy_book_path(list.id), method: :delete, "data-confirm" => "Are you sure?" %></a>
-  </p>
-<% end %>
-
+  <% @books.each do |list| %>
+    <tr>
+      <td><%= list.title %></td>
+      <td><%= list.body %></td>
+      <!-- Showへのリンク -->
+      <td>
+        <%= link_to 'Show', book_path(list.id) %>
+      </td>
+      <!-- Editへのリンク -->
+      <td>
+        <%= link_to 'Edit', edit_book_path(list.id) %>
+      </td>
+      <!-- Destroyへのリンク -->
+      <td>
+        <%= link_to 'Destroy', destroy_book_path(list.id), method: :delete, "data-confirm" => "Are you sure?" %>
+      </td>
+    </tr>
+  <% end %>
+</table>
 
 <!-- 新規投稿部分 -->
 <h2 class="sub-title">New book</h2>
@@ -48,10 +55,22 @@
 <!-- 投稿部分 -->
 <div class="field">
   <%= form_with model: @book do |f| %>
-    <h4>Title</h4>
-    <%= f.text_field :title %>
-    <h4>Body</h4>
-    <%= f.text_area :body %>
-    <%= f.submit 'Create Book' %>
+    <div class="form">
+      <label>Title</label>
+      <div class="input-box">
+        <%= f.text_field :title %>
+      </div>
+    </div>
+
+    <div class="form">
+      <label>Body</label>
+      <div class="input-box">
+        <%= f.text_area :body %>
+      </div>
+    </div>
+
+    <div class="form">
+      <%= f.submit 'Create Book', class: 'submit-btn' %>
+    </div>
   <% end %>
 </div>

@@ -30,6 +30,12 @@ h1 {
   line-height: 18px;
 }
 
+h2 {
+  margin: 16px auto;
+  font-size: 20px;
+  line-height: 18px;
+}
+
 p {
   margin: 33px;
   font-size: 13px;
@@ -60,6 +66,7 @@ label {
 .form {
   display: block;
   margin-bottom: 10px;
+  line-height: 15px
 }
 
 .error-box {
@@ -81,4 +88,20 @@ h3 {
   background-color: #dcdcdc;
   border: 2px solid red;
   box-sizing: border-box;
+}
+
+table {
+  font-size: 13px;
+
+}
+
+th, td {
+  padding: 0 8px 5px;
+}
+th {
+  font-weight: bold;
+}
+
+.submit-btn {
+  padding: 2px 4px;
 }
