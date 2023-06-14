@@ -1,7 +1,12 @@
 <p>Book was successfully created.</p>
 
-<p class="edit-title"><b>Title:</b><%= @book.title %></p>
-<p class="edit-body"><b>Body:</b><%= @book.body %></p>
+<p class="edit-title">
+  <b>Title:</b><%= @book.title %>
+</p>
 
-<%= link_to 'Edit', '/' %>
+<p class="edit-body">
+  <b>Body:</b><%= @book.body %>
+</p>
+
+<%= link_to 'Edit', edit_book_path(@book.id) %>
 <%= link_to 'Back', '/books' %>

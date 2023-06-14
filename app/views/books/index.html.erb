@@ -3,10 +3,12 @@
 <!-- 一覧部分 -->
 <p class="index-title">Title</p>
 <p class="index-body">Body</p>
-<% @books.each do |list| %>
-  <span><%= list.title %></span>
-  <span><%= list.body %></span>
-  <span><%= link_to 'show', book_path(list.id) %></span>
+<% @books.each do |book| %>
+  <span><%= book.title %></span>
+  <span><%= book.body %></span>
+  <span><%= link_to 'Show', book_path(book.id) %></span>
+  <%= link_to 'Destroy', destroy_book_path(book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+
 
 <% end %>
 
@@ -15,7 +17,7 @@
 <!-- 投稿部分 -->
 <h2 class="sub-title">New book</h2>
 
-<%= form_with model: @book, url: '/books', method: :post do |f| %>
+<%= form_with model: @book do |f| %>
   <h4>Title</h4>
   <%= f.text_field :title %>
 
